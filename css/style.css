@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px auto;
+    padding: 0px;
+    background-color: #3D3D3D;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.impulse {
+    background-color: #1DD1A1;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+}
+
+.impulse::before,
+.impulse::after {
+    content: "";
+    position: absolute;
+    background-color: #1DD1A1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.impulse::before {
+    animation-name: impgen;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.impulse::after {
+    animation-name: impgen;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes impgen {
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
